@@ -1,0 +1,573 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;    background-color: rgba(26,26,26,255);
+
+     color: rgba(27,27,40,255);
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(26,26,26,255);
+    padding: 1rem;
+     display: flex;
+     justify-content: space-between; /* Align items at the start (left) */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    gap: 1rem;  /* Added gap between logo, menu, and contact button */
+ height: 80px;
+ margin-bottom: 5rem;
+}
+
+.navbar .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar .logo-container img {
+    height: 90px; /* Adjust image height */
+    
+}
+
+.navbar .logo {
+    font-size: 3rem;
+    display: flex;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* Navbar Links */
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    margin-left: auto;  /* Pushes the nav links to the right */
+}
+
+.navbar .nav-links li {
+    margin: 0 1rem;
+    margin-top: 8px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-top: 8.4px;
+}
+
+.contact-btn {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 0.9rem 1rem   ;
+     cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0.5vw;
+    margin-left: 1rem;
+     border-radius: 5px;
+     text-decoration: none; /* Ensures it looks like a button */
+    display: inline-block; /* Ensures block-like button behavior */
+   
+}
+
+.contact-btn:hover {
+    background-color: #66b3ff;
+}
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+    display: none; /* Hide by default */
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.off-screen-menu {
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: right 0.3s ease;
+    z-index: 999; /* Ensure it stays below the navbar */
+}
+.contact-btn { 
+     height: 3.5rem;
+     width: 5.5rem;
+ }
+.off-screen-menu.active {
+    right: 0;
+}
+
+.off-screen-menu ul {
+    list-style: none;
+}
+
+.off-screen-menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Media Query for screens less than 1000px */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the nav links on smaller screens */
+    }
+
+    .ham-menu {
+        display: block; /* Show the hamburger menu on smaller screens */
+    }
+}
+ 
+ .content1{
+    background-color:rgba(26,26,26,255);
+     display: flex;
+     justify-content: space-around;
+
+  }
+ .container1{
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+ position: relative;
+ top: 5rem;
+  }
+ 
+ .container1 h1{
+    font-size: 3rem;
+ }
+ .container1 h2{
+    font-size: 5rem;
+ }
+ .container1 p{
+    font-size: 2rem;
+ }
+.text, h2, h1, p{
+    color: white;
+    
+}
+.portfolio_img{
+     height:max-content;
+    width: fit-content;
+    position: relative;
+    bottom: 3rem;
+      
+}
+  
+
+ 
+ .content2{
+    margin-top: 13rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(26,26,26,255);
+ }
+ .content2 h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 6rem;
+ }
+ .content2_para {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+   padding: 2rem;
+   font-size: 1.4rem;
+ }
+
+ 
+.highlight {
+    color: rebeccapurple;
+    font-weight: bold;
+}
+.education {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+}
+
+.education h1 {
+    font-size: 6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 4rem;
+}
+
+.about_study {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Adds space between items */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.study_item {
+    flex: 1 1 calc(30% - 1rem); /* Adjust width dynamically */
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+ }
+
+.study_item p {
+    font-size: 1.4rem;                                                                                                                                                    
+    margin: 0.3rem 0; /* Add spacing between rows */
+    background-color: #ce1d1d00;
+}
+
+/* Media Query for screens under 900px */
+@media (max-width: 900px) {
+    .about_study {
+        flex-direction: column; /* Stack items vertically */
+        gap: 1.5rem; /* Reduce gap for smaller screens */
+    }
+
+    .study_item {
+        flex: 1 1 100%; /* Full width for each item */
+        text-align: center; /* Center-align content */
+    }
+
+    .study_item p {
+        font-size: 1.2rem; /* Slightly reduce font size */
+    }
+}
+
+ #section3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+ }
+ #section3 h1{
+    font-size: 6rem;
+    margin-bottom: 3rem;
+ }
+ #section3 h2{
+    font-size: 3rem;
+ }
+ #section3 p{
+    font-size: 1.5rem;
+ }
+ #section3 img{
+    border-radius: 8px;
+ }
+ .project{
+    display: flex;
+  padding: 5rem;
+  flex: 1 1 calc(30% - 1rem); /* Adjust width dynamically */
+ 
+  padding: 2rem;
+ 
+ }
+ .projects_text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+     position: relative;
+    margin-bottom: 9rem;
+ }
+
+ #section4 {
+    display:flex ;
+    flex-direction: column;
+    text-align: center;
+ }
+ #section4 h1{
+    font-size: 6rem;
+ }
+ #section4 h2{
+    font-size: 3rem;
+ }
+ #section4 p{
+    font-size: 3rem;
+ }
+ @media (max-width: 1215px) {
+    .project{
+        display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+        flex-direction: column;
+        margin-bottom: -5rem;
+   
+ }
+ .project img{
+    width: 70vw;
+ }
+ #section4 {
+    display:flex ;
+    flex-direction: column;
+    text-align: center;
+ }
+ #section4 h1{
+    font-size: 6rem;
+ }
+ #section4 h2{
+    font-size: 3rem;
+ }
+ #section4 p{
+    font-size: 3rem;
+ }
+}
+ 
+@media (max-width: 768px) {
+   
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+    
+   .navbar {
+    flex-direction: row;
+    align-items: center;
+}
+
+ .navbar .logo-container {
+    justify-content: center;
+}
+
+ .navbar .logo-container img {
+    margin-right: 0;
+    height: 20px;
+}
+
+ .navbar button {
+    justify-content: center;
+}
+.social-links img{
+    margin: 0.9rem;
+    margin-top: 0.8rem;
+}
+
+ .navbar .nav-links {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* Nav link styling */
+.navbar li {
+    margin: 1rem 0;
+}
+
+/* Styling for the contact button */
+.navbar .contact-btn {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    position: relative;
+    
+    border-radius: 5px;
+    width: 10%;
+    text-align: center;
+}
+
+ 
+
+ .hamburger:hover + .nav-links,
+.hamburger:focus + .nav-links {
+    display: flex;   }
+
+ .nav-links:hover {
+    display: flex;   
+}
+
+ .nav-links li {
+    padding: 1rem 0;
+}
+
+ .nav-links .contact-btn {
+    width: auto;   
+    margin-top: 1rem;
+}
+     
+ .content1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+ }
+ .portfolio_img{
+    margin-top: 5rem;
+ }
+ .education{
+    padding-top: 20vw;
+ }
+ .content2_para{
+    font-size: 1.8vw;
+ }
+ 
+
+.about_study {
+    left: 2vw;  
+ }
+
+.education h1 {
+    font-size: 5vw; 
+    margin-bottom: 6vw;  
+ }
+
+ 
+
+.about_education {
+    font-size: 2.5vw; /* Increase readability on smaller screens */
+    padding: 4vw;
+    max-width: 90%;
+    line-height: 1.4;
+}
+
+.education img {
+    height: 15vw; /* Keep the image within boundaries on smaller screens */
+    margin-right: 0;
+}
+ 
+.content2_para {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+   padding: 2rem;
+   font-size: 1.4rem;
+ }
+
+.section3 h1 {
+    padding-left: 0;
+    text-align: center;
+    font-size: 5vw;
+    padding-bottom: 2vw;
+}
+
+.project {
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw 5vw;
+}
+
+.project img {
+    height: 30vw;
+    margin-bottom: 2vw;
+    margin-left: 0;
+   
+}
+
+.project h2 {
+    position: relative;
+    font-size: 4vw;
+    left: 0;
+    color: blue;
+    text-align: center;
+    margin-top: 2vw;
+}
+
+.project p {
+     position: relative;
+     font-size: 3.5vw;
+    top: 1vw;
+  }
+
+ 
+.contact_info h3,
+.contact_here h3 {
+    font-size: 4vw;
+}
+
+.contact_info p {
+    font-size: 3.5vw;
+}
+
+ .name,
+.email,
+.message {
+    width: 80vw;
+    height: 5vw;
+    font-size: 3.5vw;
+}
+
+ .buttonn {
+    width: 30vw;
+    height: 6vw;
+    margin-left: 25vw;
+}
+
+/* Adjust padding and layout positioning */
+.contact_info {
+     bottom: 2vw;
+}
+
+.contact_here {
+     bottom: 8vw;
+    padding-top: 15vw;
+}
+
+#section4 {
+    display:flex ;
+    flex-direction: column;
+    text-align: center;
+ }
+ #section4 h1{
+    font-size: 3rem;
+ }
+ #section4 h2{
+    font-size: 1.4rem;
+ }
+ #section4 p{
+    font-size: 1rem;}}
+ 
